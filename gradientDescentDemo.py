@@ -3,17 +3,26 @@ import numpy as np
 import random
 import matplotlib.pyplot as plt
 
+
 def gradientDescent(x, y, alpha, numIterations):
     xTrans = x.transpose()
+    # print x
+    # print y
     m, n = np.shape(x)
+    # print m, n
     theta = np.ones(n)
+    # print theta
     for i in range(0, numIterations):
         hwx = np.dot(x, theta)
+
         loss = hwx - y
         cost = np.sum(loss ** 2) / (2 * m)
-        print("Iteration %d | Cost: %f " % (i, cost))      
+        # print("Iteration %d | Cost: %f " % (i, cost))      
         gradient = np.dot(xTrans, loss) / m
-        theta = theta - alpha * gradient        
+        theta = theta - alpha * gradient
+
+    print cost    
+    print theta            
     return theta
 
 def genData(numPoints, bias, variance):
