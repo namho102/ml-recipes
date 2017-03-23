@@ -31,9 +31,6 @@ ax.set_xlabel('Mat do dan so')
 plt.scatter(X, y, color='black')
 
 plt.plot(X_test, regr.predict(X_test), color='blue', linewidth=3)
-# plt.plot(X_test2, regr.predict(X_test2), color='yellow', linewidth=3)
 
-# plt.xticks(())
-# plt.yticks(())
 
 plt.show()
